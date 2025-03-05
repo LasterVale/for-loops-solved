@@ -3,11 +3,15 @@
 // Return an array of numbers in 1..10
 // getFirstTenNumbers() => [1, 2, 3, ... , 10]
 
-export function getFirstTenNumbers() {
+export function getFirstTenNumbers(max) {
   // Your code goes here...
-
+  while (max === 10);
+  const answer = [];
+  for (let n=1 ; n<=10 ; n++) {
+    answer.push(n);
+  }
+  return answer;
 }
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-1"
 // If the test has all tests passed, switch to the next exercise file

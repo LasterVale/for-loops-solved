@@ -5,10 +5,24 @@
 
 export function findMinValueInArray(array) {
   // Your code goes here...
+  let min = array[0];
+  for (let n=0 ; n<array.length; n++) {
+    if (array[n] < min) {
+      min = array[n];
+    }
+  }
+  return min;
 }
 
 export function findMaxValueInArray(array) {
   // Your code goes here...
+  let max = array[0];
+  for (let n=0 ; n<array.length; n++) {
+    if (array[n] > max) {
+      max = array[n];
+    }
+  }
+  return max;
 }
 
 // === TEST YOURSELF ===

@@ -9,7 +9,82 @@
 // Phil's Account Object
 // ]
 
-export function getAllAccountsWithSumsOfDepositsLess2000(array) {}
+import { bankAccounts, bankAccounts2 } from "../data/data";
+function accountNames(array) {
+  let acctNames = [];
+  for (let acct of bankAccounts2) {
+    acctNames.push(acct.name);
+  }
+  return acctNames;
+}
+console.log(accountNames());
+
+function calculateSmallDeposits(array) {
+  const totals = [];
+
+  for (let i = 0; i < bankAccounts.length; i++) {
+    const obj = bankAccounts[i];
+    let total = 0;
+
+    if (obj.deposits && Array.isArray(obj.deposits)) {
+      for (let j = 0; j < obj.deposits.length; j++) {
+        const deposit = obj.deposits[j];
+        if (deposit < 2000) {
+          total += deposit;
+        }
+      }
+    }
+    totals.push(total);
+  }
+  return totals;
+}
+console.log(calculateSmallDeposits());
+
+function processDeposits(array) {
+  const totals = [];
+
+  for (let i = 0; i < bankAccounts.length; i++) {
+    const obj = bankAccounts[i];
+    let sum = 0;
+
+    if (obj.deposits && Array.isArray(obj.deposits)) {
+      for (let j = 0; j < obj.deposits.length; j++) {
+        sum += obj.deposits[j];
+      }
+    }
+
+    if (sum < 2000) {
+      totals.push({ ...obj});
+    }
+  }
+  return totals;
+}
+console.log(processDeposits());
+
+
+
+
+
+
+export function getAllAccountsWithSumsOfDepositsLess2000(array) {
+  const totals = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const obj = array[i];
+    let sum = 0;
+
+    if (obj.deposits && Array.isArray(obj.deposits)) {
+      for (let j = 0; j < obj.deposits.length; j++) {
+        sum += obj.deposits[j];
+      }
+    }
+
+    if (sum < 2000) {
+      totals.push({ ...obj});
+    }
+  }
+  return totals;
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"

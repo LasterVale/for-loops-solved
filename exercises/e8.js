@@ -4,9 +4,41 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithGreatestBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
+import { bankAccounts } from "../data/data";
+function getClientWithGreatestBalance1(array) {
+  // Your code goes here...
+  let highestBalance = -Infinity;
+  let result = [];
+
+  for (const obj of bankAccounts) {
+    if (obj.balance > highestBalance) {
+      highestBalance = obj.balance;
+      result = [obj];
+    }
+  }
+
+  return result.length > 0 ? result : [];
+}
+console.log(getClientWithGreatestBalance1())
+
+
+
+
+
+
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
+  let highestBalance = -Infinity;
+  let result = [];
 
+  for (const obj of array) {
+    if (obj.balance > highestBalance) {
+      highestBalance = obj.balance;
+      result = [obj];
+    }
+  }
+
+  return result.length > 0 ? result : [];
 }
 
 

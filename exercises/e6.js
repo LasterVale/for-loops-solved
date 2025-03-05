@@ -5,8 +5,16 @@
 
 export function getClientWithNoMoney(array) {
   // Your code goes here...
-
+  const lowBalance = [];
+  const tolerance = 0.001; 
+  for (let n = 0; n < array.length; n++) {
+    if (Math.abs(array[n].balance) < tolerance) {
+      lowBalance.push(array[n].name);
+    }
+  }
+  return lowBalance;
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"
