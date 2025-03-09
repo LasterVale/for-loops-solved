@@ -6,7 +6,11 @@
 
 export function getAllClientNames(array) {
   // Your code goes here...
-
+  let acctNames = [];
+  for (let acct of array) {
+    acctNames.push(acct.name);
+  }
+  return acctNames;
 }
 
 

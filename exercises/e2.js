@@ -4,7 +4,11 @@
 
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-
+  const answer = [];
+  for (let n = 0; n * n < max; n++) {
+    answer.push(n * n);
+  }
+  return answer;
 }
 
 // === TEST YOURSELF ===
